@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style/experiment.css">
+    <title>ExVQA - Kết quả thực nghiệm</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="../static/img/Logo_IUH.png" alt="logo">
+            <h1>KHOÁ LUẬN TỐT NGHIỆP</h1>
+        </div>
+        <h2 class="header-subtitle">HỆ THỐNG TRẢ LỜI CÂU HỎI TRỰC QUAN <br> SỬ DỤNG STACKED ATTENTION NETWORK VÀ EXTENDED LONG SHORT-TERM MEMORY</h2>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Trang chủ</a></li>
+            <li><a href="/model">Mô hình</a></li>
+            <li><a href="/experiment" class="active">Thực nghiệm</a></li>
+            <li><a href="/application">Application</a></li>
+        </ul>
+    </nav>
+    <div class="content-wrapper">
+        <div class="container">
+            <h1>Kết quả độ đo BLEU trên tập dữ liệu PathVQA qua mỗi epochs.</h1>
+            <img src="../static/img/plot_pathvqa.png" alt="model" style="max-width: 100%; height: auto;">
+            <br>
+            <br>
+            <br>
+            <h1>Kết quả độ đo BLEU trên tập dữ liệu VQA – Med 2019 qua mỗi epochs.</h1>
+            <img src="../static/img/plot_vqamed.png" alt="sans" style="max-width: 100%; height: auto;">
+            
+            <br>
+            <br>
+            <br>
+
+            <h1>Kết quả trên tập dữ liệu PathVQA</h1>
+            <div class="three-column-container">
+                <div class="column">
+                    <img src="../static/img/results/pathvqa/rs1.png" alt="rs1">
+                    <p><strong>Question: </strong>where is this from?</p>
+                    <p><strong>Answer: </strong>gastrointestinal system</p>
+                    <p><strong>Answer predicted: </strong>gastrointestinal system</p>
+                </div>
+                <div class="column">
+                    <img src="../static/img/results/pathvqa/rs2.png" alt="rs2">
+                    <p><strong>Question: </strong>what are collapsed tubules outlined by?</p>
+                    <p><strong>Answer: </strong>wavy basement membranes</p>
+                    <p><strong>Answer predicted: </strong>wavy basement membranes</p>
+                </div>
+                <div class="column">
+                    <img src="../static/img/results/pathvqa/rs3.png" alt="rs3">
+                    <p><strong>Question: </strong>what this image show primary sclerosing cholangitis?</p>
+                    <p><strong>Answer: </strong>yes</p>
+                    <p><strong>Answer predicted: </strong>yes</p>
+                </div>
+            </div>
+            
+            <br>
+            <br>
+            <br>
+
+            <h1>Kết quả trên tập VQA - Med 2019</h1>
+            <div class="three-column-container">
+                <div class="column">
+                    <img src="../static/img/results/vqamed/rs3.png" alt="rs3">
+                    <p><strong>Question: </strong>what type of imaging modality is used to acquire the image?</p>
+                    <p><strong>Answer: </strong>xr - plain film</p>
+                    <p><strong>Answer predicted: </strong>xr - plain film</p>
+                </div>
+                <div class="column">
+                    <img src="../static/img/results/vqamed/rs4.png" alt="rs4">
+                    <p><strong>Question: </strong>is this noncontrast mri?</p>
+                    <p><strong>Answer: </strong>yes</p>
+                    <p><strong>Answer predicted: </strong>yes</p>
+                </div>
+                <div class="column">
+                    <img src="../static/img/results/vqamed/rs5.png" alt="rs5">
+                    <p><strong>Question: </strong>what is type of imaging is this?</p>
+                    <p><strong>Answer: </strong>us - ultrasound</p>
+                    <p><strong>Answer predicted: </strong>us - ultrasound</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h3>Liên hệ</h3>
+            <p>Email: 20087541@student.iuh.edu.vn</p>
+            <p>Phone: +84 374 442 6144</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Bởi Ho Vo Hoang Duy.</p>
+        </footer>
+    </div>
+</body>
+</html>
