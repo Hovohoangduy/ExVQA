@@ -1,4 +1,4 @@
 __pycache__
-static/models
+static/weights
 static/results
 *.pt
