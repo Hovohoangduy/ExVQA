@@ -1,96 +1,111 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: "Times New Roman", Times, serif;
     margin: 0;
     padding: 0;
-    background: #f4f4f9;
+    background: url('../img/bg.jpg') no-repeat center center fixed; /* Thêm background hình ảnh */
+    background-size: cover; /* Đảm bảo hình nền phủ hết trang */
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
 header {
-    background: #B9D3EE;
-    color: #000;
-    padding-top: 20px;
-    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Màu đen mờ cho header */
+    color: #fff; /* Đổi màu chữ thành trắng cho dễ nhìn */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    margin-left: 50px;
 }
+
 .header-content img {
-    max-width: 170px;
-    height: auto;
+    max-width: 148px;
+    height: 94px;
 }
+
 .header-content h1 {
-    margin: 0;
     text-align: center;
-    flex-grow: 1;
-    margin-right: 215px;
+    margin: 0;
+    font-size: 24px;
 }
+
 .header-subtitle {
     margin-top: 10px;
-    margin-bottom: 0px;
-    padding-bottom: 24px;
     text-align: center;
 }
+
 .container {
-    width: 100%;
+    width: 80%;
     margin: auto;
+    margin-top: 40px;
     overflow: hidden;
-    background: #fff;
+    background: rgba(0, 0, 0, 0.3); /* Màu đen mờ cho header */
+    color: #fff; /* Đổi màu chữ thành trắng cho dễ nhìn */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 0;
+    padding: 50px 0;
     flex-grow: 1;
-    position: relative;
+    text-align: center;
 }
+.container h1 {
+    margin: 0;
+}
+
 footer {
     text-align: center;
     padding: 10px;
-    background: #B9D3EE;
-    color: #000;
+    background: rgba(0, 0, 0, 0.5); /* Màu đen mờ cho footer */
+    color: #fff; /* Đổi màu chữ thành trắng cho dễ nhìn */
 }
-.contact-info {
-    margin-top: 20px;
-}
+
 .content-wrapper {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     text-align: center;
+    line-height: 1.5;
 }
+
 nav {
-    background-color: #6C7B8B;
-    padding: 10px 0;
+    padding: 10px 20px;
+    border-radius: 8px;
 }
+
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: left;
-    margin-left: 50px;
+    display: flex;
 }
+
 nav ul li {
-    display: inline-block;
-    margin-right: 20px;
+    margin: 0 10px;
 }
+
 nav ul li a {
-    color: #fff;
     text-decoration: none;
+    color: #fff;
     padding: 8px 16px;
     display: block;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    font-size: 18px;
 }
+
 nav ul li a:hover {
-    background-color: #9FB6CD;
+    background-color: #27408B;
+    color: #fff;
 }
+
 nav ul li a.active {
-    background-color: #B9D3EE;
-    color: #000;
+    background-color: #436EEE;
+    color: #fff;
 }
 
 /* Chatbot styles */
@@ -103,6 +118,7 @@ nav ul li a.active {
     font-family: Arial, sans-serif;
     margin-top: 50px;
     margin-bottom: 50px;
+    background: rgba(0, 0, 0, 0.5); 
 }
 
 .chatbot-messages {
@@ -121,9 +137,8 @@ nav ul li a.active {
 }
 
 .chatbot-input input {
-    height: 24px;
+    height: 40px;
     flex-grow: 1;
-    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     width: 100%;
@@ -131,8 +146,8 @@ nav ul li a.active {
 
 .chatbot-input button {
     padding: 10px;
-    background-color: #6C7B8B;
-    color: white;
+    background-color: #436EEE;
+    color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -141,7 +156,7 @@ nav ul li a.active {
 }
 
 .chatbot-input button:hover {
-    background-color: #6C7B8B;
+    background-color: #27408B;
 }
 
 .message {
@@ -155,11 +170,13 @@ nav ul li a.active {
 .message.bot {
     background-color: #f4f4f4;
     text-align: left;
+    color: #000;
 }
 
 .message.user {
-    background-color: #d1e8ff;
+    background-color: #436EEE;
     text-align: right;
+    color: #fff;
 }
 
 .message label {
@@ -203,15 +220,15 @@ p {
 .upload-btn {
     margin-top: 10px;
     padding: 10px;
-    background-color: #6C7B8B;
-    color: white;
+    background-color: #436EEE;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .upload-btn:hover {
-    background-color: #6C7B8B;
+    background-color: #27408B;
 }
 
 /* Allow drop styling */
@@ -240,4 +257,8 @@ p {
     33% { content: '..'; }
     66% { content: '...'; }
     100% { content: '.'; }
+}
+
+#user-input {
+    font-size: 16px;
 }

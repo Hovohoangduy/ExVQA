@@ -1,4 +1,4 @@
 __pycache__
 static/weights
-static/results
+static/img
 *.pt

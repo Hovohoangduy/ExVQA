@@ -9,7 +9,7 @@ from config import config
 app = Flask(__name__)
 
 model = VQAModel().to(config.DEVICE)
-model.load_state_dict(torch.load('static/models/exvqa_model.pt', map_location=config.DEVICE))
+model.load_state_dict(torch.load('static/weights/exvqa_model.pt', map_location=config.DEVICE))
 
 tokenizer = AutoTokenizer.from_pretrained(config.TEXT_DIR)
 

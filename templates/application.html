@@ -5,25 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/style/application.css">
     <title>ExVQA - Application</title>
+    <link rel="icon" href="../static/img/logo_ti.png" type="image/x-icon">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <img src="../static/img/Logo_IUH.png" alt="logo">
-            <h1>KHOÁ LUẬN TỐT NGHIỆP</h1>
+            <img src="../static/img/logo.png" alt="logo">
+            <h1>BÁO CÁO <br> KHOÁ LUẬN TỐT NGHIỆP</h1>
         </div>
-        <h2 class="header-subtitle">HỆ THỐNG TRẢ LỜI CÂU HỎI TRỰC QUAN <br> SỬ DỤNG STACKED ATTENTION NETWORK VÀ EXTENDED LONG SHORT-TERM MEMORY</h2>
+        <nav>
+            <ul>
+                <li><a href="/">Trang chủ</a></li>
+                <li><a href="/model">Mô hình</a></li>
+                <li><a href="/experiment">Dữ liệu</a></li>
+                <li><a href="/application" class="active">Application</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="/">Trang chủ</a></li>
-            <li><a href="/model">Mô hình</a></li>
-            <li><a href="/experiment">Thực nghiệm</a></li>
-            <li><a href="/application" class="active">Application</a></li>
-        </ul>
-    </nav>
     <div class="content-wrapper">
         <div class="container">
+            <h1>Visual Question Answering system</h1>
             <!-- Chatbot container -->
             <div class="chatbot-container">
                 <div class="chatbot-messages" id="chatbot-messages">
@@ -33,23 +34,17 @@
                     </div>
                 </div>
                 <div class="chatbot-input input-wrapper">
-                    <input type="text" id="user-input" placeholder="Nhập câu hỏi của bạn..." ondrop="drop(event)" ondragover="allowDrop(event)" />
-                    <button onclick="sendMessage()">Gửi</button>
+                    <input type="text" id="user-input" placeholder="Message VQA system" ondrop="drop(event)" ondragover="allowDrop(event)" />
+                    <button onclick="sendMessage()">Send</button>
                     <input type="file" id="file-input" style="display:none" accept="image/*" onchange="handleFileSelect(event)" />
-                    <button class="upload-btn" onclick="triggerFileInput()">Tải hình ảnh lên</button>
+                    <button class="upload-btn" onclick="triggerFileInput()">Image Upload</button>
                     <img id="image-preview" class="image-preview" src="" alt="Preview Image" />
                 </div>
             </div>
         </div>
 
-        <div class="contact-info">
-            <h3>Liên hệ</h3>
-            <p>Email: 20087541@student.iuh.edu.vn</p>
-            <p>Phone: +84 374 442 6144</p>
-        </div>
-
         <footer>
-            <p>&copy; 2024 Bởi Ho Vo Hoang Duy.</p>
+            <p>&copy; 2024 By Ho Vo Hoang Duy.</p>
         </footer>
     </div>
 
