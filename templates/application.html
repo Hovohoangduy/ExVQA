@@ -29,12 +29,12 @@
             <div class="chatbot-container">
                 <div class="chatbot-messages" id="chatbot-messages">
                     <div class="message bot">
-                        <label for="bot-msg">Bot:</label>
+                        <label>Bot:</label>
                         <p id="bot-msg">Hello, I am a Visual Question Answering system.</p>
                     </div>
                 </div>
                 <div class="chatbot-input input-wrapper">
-                    <input type="text" id="user-input" placeholder="Message VQA system" ondrop="drop(event)" ondragover="allowDrop(event)" />
+                    <input type="text" id="user-input" placeholder="Enter your question" />
                     <button onclick="sendMessage()">Send</button>
                     <input type="file" id="file-input" style="display:none" accept="image/*" onchange="handleFileSelect(event)" />
                     <button class="upload-btn" onclick="triggerFileInput()">Image Upload</button>
@@ -48,6 +48,6 @@
         </footer>
     </div>
 
-    <script src="../static/script/application.js"></script>
+    <script src="../static/script/pred.js"></script>
 </body>
 </html>

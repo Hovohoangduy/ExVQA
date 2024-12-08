@@ -1,17 +1,19 @@
 let uploadedImage = null;
 let uploadedFileName = null; // Variable to store the file name
+let rules = []; // Load rules dynamically
 
-const rules = [
-    { question: "what shows branching papillae having flbrovascular stalk covered by a single layer of cuboidal cells having ground-glass nuclei?", 
-        image: "img1.jpg",
-        answer: "yes" },
-    { question: "what shows scattered inflammatory cells, calcification arrowheads, and neovascularization?", 
-        image: "img2.jpg",
-        answer: "high-power view of the junction of the fibrous cap and core" },
-    { question: "how are the histone subunits charged?", 
-        image: "img3.jpg",
-        answer: "positively charged" },
-];
+async function loadRules() {
+    try {
+        const response = await fetch('static/rules.json');
+        if (!response.ok) throw new Error('Failed to fetch rules');
+        rules = await response.json();
+    } catch (error) {
+        console.error('Error loading rules:', error);
+    }
+}
+
+// Call loadRules when the script is loaded
+loadRules();
 
 function sendMessage() {
     const userInput = document.getElementById('user-input').value.trim().toLowerCase();

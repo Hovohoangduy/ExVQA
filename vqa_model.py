@@ -13,7 +13,7 @@ vocab = tokenizer.get_vocab()
 
 class VQAModel(nn.Module):
     def __init__(self, vocab_size=len(vocab), output_size=768, d_model=768,
-                 num_heads=8, hidden_size=768,num_att_layers=2):
+                 num_heads=8, hidden_size=768,num_att_layers=4):
         super(VQAModel, self).__init__()
         self.image_model = ImageEmbedding(output_size=output_size).to(config.DEVICE)
         self.ques_model = QuesEmbedding(output_size=output_size).to(config.DEVICE)
@@ -28,6 +28,7 @@ class VQAModel(nn.Module):
         ).to(config.DEVICE)
 
         self.mlp = nn.Sequential(
+            nn.Dropout(0.2),
             nn.Linear(d_model, d_model),
             nn.GELU(),
             nn.Linear(d_model, vocab_size)

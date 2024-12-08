@@ -10,11 +10,13 @@ class StackedAttentionNets(nn.Module):
         super(StackedAttentionNets, self).__init__()
         self.ff_image = nn.Linear(d, k)
         self.ff_ques = nn.Linear(d, k)
+        self.dropout = nn.Dropout(0.3)
         self.ff_attention = nn.Linear(k, 1)
     def forward(self, vi, vq):
         hi = self.ff_image(vi)
         hq = self.ff_ques(vq)
         ha = F.gelu(hi + hq)
+        ha = self.dropout(ha)
         ha = self.ff_attention(ha).squeeze(dim=2)
         pi = F.softmax(ha, dim=1)
         vi_attended = (pi.unsqueeze(dim=2) * vi).sum(dim=1)
