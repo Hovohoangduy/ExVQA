@@ -12,7 +12,6 @@ from transformers import AutoTokenizer
 from nltk.translate.bleu_score import corpus_bleu, SmoothingFunction, brevity_penalty
 import math
 
-
 tokenizer = AutoTokenizer.from_pretrained(config.TEXT_DIR)
 seed = 42
 random.seed(seed)
