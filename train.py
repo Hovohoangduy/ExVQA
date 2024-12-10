@@ -12,26 +12,7 @@ from transformers import AutoTokenizer
 from nltk.translate.bleu_score import corpus_bleu, SmoothingFunction, brevity_penalty
 import math
 
-tokenizer = AutoTokenizer.from_pretrained(config.TEXT_DIR)
-seed = 42
-random.seed(seed)
-np.random.seed(seed)
-torch.manual_seed(seed)
-torch.cuda.manual_seed_all(seed)
-torch.backends.cudnn.deterministic = True
-torch.backends.cudnn.benchmark = False
-
-model = VQAModel().to(config.DEVICE)
-criterion = nn.CrossEntropyLoss()
-optimizer = optim.AdamW(model.parameters(), lr=0.0002, weight_decay=2e-4)
-scheduler = get_linear_schedule_with_warmup(
-    optimizer, 
-    num_warmup_steps=0, 
-    num_training_steps=int(len(train_loader) * 20)
-)
-
-ans_model = AnsEmbedding().to(config.DEVICE)
-def train_model(model, ans_model, train_loader, tokenizer, criterion, optimizer, device, num_epochs=14, print_every=500, batch_size=32):
+def train_model(model, ans_model, train_loader, tokenizer, criterion, optimizer, device, num_epochs=14, print_every=500, batch_size=4):
     smoother = SmoothingFunction()
 
     losses = []
@@ -110,3 +91,18 @@ def train_model(model, ans_model, train_loader, tokenizer, criterion, optimizer,
               f"Average BLEU-Scores: {avg_bleu_scores:.4f}\n")
 
     return losses, bleu1_scores, bleu2_scores, bleu3_scores, bleu4_scores, bleu_scores
+
+
+if __name__=="__main__":
+    tokenizer = AutoTokenizer.from_pretrained(config.TEXT_DIR)
+    model = VQAModel().to(config.DEVICE)
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.AdamW(model.parameters(), lr=0.0002, weight_decay=2e-4)
+    scheduler = get_linear_schedule_with_warmup(
+        optimizer, 
+        num_warmup_steps=0, 
+        num_training_steps=int(len(train_loader) * 20)
+    )
+
+    ans_model = AnsEmbedding().to(config.DEVICE)
+    train_model(model, ans_model, train_loader, tokenizer, criterion, optimizer, device=config.DEVICE, num_epochs=14, batch_size=config.BATCH_SIZE)
