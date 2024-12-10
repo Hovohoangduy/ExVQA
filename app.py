@@ -13,7 +13,7 @@ os.makedirs("static/temp", exist_ok=True)
 
 # Load model và tokenizer
 model = VQAModel().to(config.DEVICE)
-model.load_state_dict(torch.load('static/weights/ExVQA_v2.pt', map_location=config.DEVICE))
+model.load_state_dict(torch.load('static/weights/med_vqa_v3.pt', map_location=config.DEVICE))
 tokenizer = AutoTokenizer.from_pretrained(config.TEXT_DIR)
 
 @app.route("/")
@@ -34,10 +34,6 @@ def page_application():
 
 @app.route('/predict_batch', methods=['POST'])
 def predict_batch_route():
-    """
-    API nhận đầu vào 1 ảnh và 1 câu hỏi, sau đó copy ảnh thành 4 lần 
-    và dự đoán dựa trên danh sách câu hỏi mặc định.
-    """
     if 'image' not in request.files or 'question' not in request.form:
         return jsonify({'error': 'No image or question provided!'}), 400
 
