@@ -97,7 +97,7 @@ if __name__=="__main__":
     tokenizer = AutoTokenizer.from_pretrained(config.TEXT_DIR)
     model = VQAModel().to(config.DEVICE)
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.AdamW(model.parameters(), lr=0.0002, weight_decay=2e-4)
+    optimizer = optim.AdamW(model.parameters(), lr=0.0001)
     scheduler = get_linear_schedule_with_warmup(
         optimizer, 
         num_warmup_steps=0, 
