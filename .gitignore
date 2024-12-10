@@ -1,7 +1,5 @@
 __pycache__
 static/weights
 static/img
-static/**/application.js
 static/temp
-static/rules.json
 *.pt
