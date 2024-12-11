@@ -3,3 +3,4 @@ static/weights
 static/img
 static/temp
 *.pt
+*.txt

@@ -85,6 +85,11 @@ function sendMessage() {
       botMessageTyping.remove(); // Remove typing message
       displayMessage(`Error: ${error.message}`, 'bot');
   });
+
+  // Clear input text and file upload after sending
+  document.getElementById('user-input').value = '';
+  fileInput.value = '';
+  document.getElementById('image-preview').style.display = 'none'; // Hide the image preview
 }
 
 // Display message in chat window

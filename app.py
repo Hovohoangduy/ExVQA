@@ -13,7 +13,7 @@ os.makedirs("static/temp", exist_ok=True)
 
 # Load model và tokenizer
 model = VQAModel().to(config.DEVICE)
-model.load_state_dict(torch.load('static/weights/med_vqa_v3.pt', map_location=config.DEVICE))
+model.load_state_dict(torch.load('static/weights/med_vqa_v5.pt', map_location=config.DEVICE))
 tokenizer = AutoTokenizer.from_pretrained(config.TEXT_DIR)
 
 @app.route("/")
