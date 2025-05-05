@@ -77,17 +77,3 @@ The training script calculates BLEU scores (BLEU@1, BLEU@2, BLEU@3, BLEU@4) to e
 ## Dataset
 
 The dataset should be structured with `train`, `validation`, and `test` splits. Update the `dataset` path in `data_processing.py` to point to your dataset.
-
----
-
-## References
-
-- [PyTorch](https://pytorch.org/)
-- [Transformers](https://huggingface.co/transformers/)
-- [BLEU Score](https://en.wikipedia.org/wiki/BLEU)
-
----
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
