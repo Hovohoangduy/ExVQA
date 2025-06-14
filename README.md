@@ -2,6 +2,8 @@
 
 ExVQA is a Visual Question Answering (VQA) model that combines image and text embeddings with advanced neural network architectures, including Stacked Attention Networks (SANs) and xLSTM decoders, to generate answers to questions based on input images.
 
+This is the source code of the published paper CAEE_110439 ( ExVQA: a novel stacked attention networks with extended long short-term memory model for visual question answering) on the Computers and Electrical Engineering Journal
+[Link paper](https://www.sciencedirect.com/science/article/pii/S0045790625003829)
 ---
 
 ## System Requirements
